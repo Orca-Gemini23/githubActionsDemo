@@ -1,17 +1,8 @@
-name: Deployment
-
-concurrency: production
-
 on:
   push:
     branches:
       - main
-
-jobs:
-  deployment:
-    runs-on: ubuntu-latest
-    environment: production
-    steps:
-      - name: deploy
-        # ...deployment-specific steps
-        # ... can add the cancelling in progress for concurrency 
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
